@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;600;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#fcf9f8",
+                      "surface-container-low": "#f6f3f2",
+                      "on-secondary-fixed": "#1b1b1c",
+                      "background": "#fcf9f8",
+                      "on-primary-fixed": "#1d1c17",
+                      "outline": "#7a776f",
+                      "outline-variant": "#cbc6bc",
+                      "on-primary-container": "#6f6d67",
+                      "on-background": "#1c1b1b",
+                      "tertiary-container": "#ffede8",
+                      "inverse-primary": "#cac6be",
+                      "surface-dim": "#dcd9d9",
+                      "inverse-surface": "#313030",
+                      "secondary-fixed": "#e5e2e1",
+                      "tertiary-fixed-dim": "#ffb59c",
+                      "primary-fixed-dim": "#cac6be",
+                      "on-surface": "#1c1b1b",
+                      "secondary": "#5f5e5e",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-error": "#ffffff",
+                      "primary-container": "#f5f0e8",
+                      "tertiary-fixed": "#ffdbcf",
+                      "on-primary": "#ffffff",
+                      "primary": "#615e58",
+                      "error": "#ba1a1a",
+                      "surface-tint": "#615e58",
+                      "surface-container-high": "#eae7e7",
+                      "secondary-container": "#e2dfde",
+                      "on-tertiary-container": "#c0430d",
+                      "surface-container-highest": "#e5e2e1",
+                      "on-surface-variant": "#49473f",
+                      "on-secondary-fixed-variant": "#474746",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "on-tertiary-fixed-variant": "#822800",
+                      "surface-variant": "#e5e2e1",
+                      "on-secondary-container": "#636262",
+                      "inverse-on-surface": "#f3f0ef",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#494741",
+                      "surface-bright": "#fcf9f8",
+                      "tertiary": "#aa3600",
+                      "primary-fixed": "#e7e2da",
+                      "on-tertiary-fixed": "#390c00",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container": "#f0eded"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-md": "32px",
+                      "stack-lg": "64px",
+                      "container-max": "1280px",
+                      "section-padding": "120px",
+                      "gutter": "32px",
+                      "stack-sm": "16px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Manrope"],
+                      "body-md": ["Manrope"],
+                      "display-xl": ["Noto Serif"],
+                      "headline-md": ["Noto Serif"],
+                      "label-sm": ["Manrope"],
+                      "headline-lg": ["Noto Serif"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .paint-stroke-mask {
+            mask-image: radial-gradient(circle, black 50%, transparent 100%);
+            -webkit-mask-image: radial-gradient(circle, black 50%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-background antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 border-b bg-stone-50/90 backdrop-blur-md border-stone-200/50">
+<nav class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+<div class="text-2xl font-bold tracking-tighter text-stone-900 font-headline-lg">KOPEC</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-stone-600 hover:text-stone-900 transition-colors font-body-md" href="#leistungen">Leistungen</a>
+<a class="text-stone-600 hover:text-stone-900 transition-colors font-body-md" href="#referenzen">Referenzen</a>
+<a class="text-stone-600 hover:text-stone-900 transition-colors font-body-md" href="#bewertungen">Bewertungen</a>
+<a class="text-stone-600 hover:text-stone-900 transition-colors font-body-md" href="#kontakt">Kontakt</a>
+<a class="bg-tertiary text-on-tertiary px-6 py-2.5 rounded-full font-label-sm uppercase tracking-widest hover:opacity-80 transition-opacity" href="tel:08514905519">
+                    Angebot anfordern
+                </a>
+</div>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center bg-inverse-surface text-surface pt-20 overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="relative z-10">
+<h1 class="font-display-xl text-display-xl mb-4">
+<span class="italic block font-normal text-tertiary-fixed-dim">Ihr Malermeister</span>
+<span class="font-bold">in Passau.</span>
+</h1>
+<p class="text-body-lg font-body-lg text-secondary-fixed mb-12 border-l-2 border-tertiary pl-6">
+                    Zuverlässig · Gewissenhaft · Meisterqualität
+                </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<a class="bg-tertiary text-on-tertiary px-8 py-4 text-center font-label-sm uppercase tracking-widest hover:bg-tertiary/90 transition-all flex items-center justify-center gap-3 group" href="tel:08514905519">
+<span class="material-symbols-outlined">call</span>
+                        Jetzt anrufen: 0851 4905519
+                    </a>
+<a class="border border-secondary-fixed text-secondary-fixed px-8 py-4 text-center font-label-sm uppercase tracking-widest hover:bg-surface hover:text-inverse-surface transition-all" href="#kontakt">
+                        Kostenloses Angebot
+                    </a>
+</div>
+</div>
+<div class="hidden lg:block relative h-full min-h-[600px]">
+<div class="absolute inset-0 bg-tertiary opacity-10 blur-3xl transform -rotate-12 translate-x-20"></div>
+<img class="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-700 rounded-lg shadow-2xl" data-alt="A professional painter's workspace featuring high-quality paint cans, precision brushes, and architectural swatches laid out on a clean drop cloth. The lighting is focused and warm, highlighting the texture of the materials. The color palette is dominated by deep charcoal, rich terracotta accents, and soft cream tones, reflecting a master craftsmanship aesthetic in a minimalist interior design setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2rQhlx1jOLW04qbs6J6mjcM3V7ezTJOYdkU7etqvBzv2Y_glRI4rAjGZlvkvNvcNfeXQqy0rOzW7uIjrqr-SC0Glu1H3TWd50RplZkcYiuYzA1u-fxgrwIM8s8bHBdWKIaKXT0zESafYHCpN3bjL-DmExYd1F3iuy_juZ5nVPd64AvwuumddD8WItnnPRmaEc7h3zhFnmFVvrwqm-lzbUIHjZmRt7rh57NZSnCQxvagJTXfCA2Y73rU28ymqrhYV20czlf-zhh-s"/>
+</div>
+</div>
+</section>
+<!-- Trust Bar -->
+<div class="bg-surface-container py-12 border-b border-outline-variant">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="text-center md:border-r border-outline-variant last:border-0">
+<div class="flex justify-center mb-2 text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-label-sm uppercase text-on-surface">5.0 Google Rating</p>
+</div>
+<div class="text-center md:border-r border-outline-variant last:border-0">
+<span class="material-symbols-outlined text-tertiary mb-2 text-3xl">verified</span>
+<p class="font-label-sm uppercase text-on-surface">Meisterbetrieb</p>
+</div>
+<div class="text-center md:border-r border-outline-variant last:border-0">
+<span class="material-symbols-outlined text-tertiary mb-2 text-3xl">location_on</span>
+<p class="font-label-sm uppercase text-on-surface">Passau &amp; Umgebung</p>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined text-tertiary mb-2 text-3xl">home</span>
+<p class="font-label-sm uppercase text-on-surface">Innen &amp; Außen</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Leistungen Section -->
+<section class="py-[120px] bg-inverse-surface text-surface" id="leistungen">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<span class="font-label-sm uppercase text-tertiary tracking-[0.2em] mb-4 block">Handwerkliche Perfektion</span>
+<h2 class="font-headline-lg text-headline-lg">Unsere Leistungen</h2>
+</div>
+<div class="w-24 h-px bg-tertiary hidden md:block mb-6"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="md:col-span-2 group relative overflow-hidden bg-white/5 border border-white/10 p-8 h-[400px] flex flex-col justify-end transition-all hover:border-tertiary/50">
+<div class="absolute top-8 right-8 text-tertiary text-5xl opacity-50 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-5xl">format_paint</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 group-hover:text-tertiary transition-colors">Fassadenanstrich</h3>
+<p class="text-body-md text-secondary-fixed max-w-md">Langlebiger Schutz und ästhetische Aufwertung für Ihr Gebäude – fachgerecht ausgeführt für höchste Witterungsbeständigkeit.</p>
+</div>
+<!-- Card 2 -->
+<div class="group relative overflow-hidden bg-white/5 border border-white/10 p-8 h-[400px] flex flex-col justify-end transition-all hover:border-tertiary/50">
+<div class="absolute top-8 right-8 text-tertiary text-5xl opacity-50 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-5xl">brush</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 group-hover:text-tertiary transition-colors">Innenraumgestaltung</h3>
+<p class="text-body-md text-secondary-fixed">Farben, die Emotionen wecken. Wir schaffen Wohnwelten nach Ihren individuellen Wünschen.</p>
+</div>
+<!-- Card 3 -->
+<div class="group relative overflow-hidden bg-white/5 border border-white/10 p-8 h-[400px] flex flex-col justify-end transition-all hover:border-tertiary/50">
+<div class="absolute top-8 right-8 text-tertiary text-5xl opacity-50 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-5xl">roofing</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 group-hover:text-tertiary transition-colors">Dachsanierung</h3>
+<p class="text-body-md text-secondary-fixed">Professionelle Dachreinigung und Beschichtung für ein neues Erscheinungsbild und Schutz.</p>
+</div>
+<!-- Card 4 -->
+<div class="md:col-span-2 group relative overflow-hidden bg-white/5 border border-white/10 p-8 h-[400px] flex flex-col justify-end transition-all hover:border-tertiary/50">
+<div class="absolute top-8 right-8 text-tertiary text-5xl opacity-50 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-5xl">foundation</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 group-hover:text-tertiary transition-colors">Sockel &amp; Terrasse</h3>
+<p class="text-body-md text-secondary-fixed max-w-md">Spezialbeschichtungen für beanspruchte Flächen im Außenbereich. Robust und formschön.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-[120px] bg-surface overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<span class="material-symbols-outlined text-[120px] text-tertiary opacity-10 absolute -top-16 -left-12 select-none">format_quote</span>
+<blockquote class="font-display-xl text-headline-lg italic text-on-surface leading-tight relative z-10">
+                        "Solche Handwerker muss man mittlerweile suchen. Präzise, sauber und absolut zuverlässig."
+                    </blockquote>
+<div class="mt-8 flex items-center gap-4">
+<div class="w-12 h-px bg-tertiary"></div>
+<p class="font-label-sm uppercase tracking-widest text-primary">Kundenstimme aus Passau</p>
+</div>
+</div>
+<div class="space-y-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Tradition trifft Moderne</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+                        Als Meisterbetrieb in Passau stehen wir für Werte, die im modernen Handwerk oft verloren gehen: Pünktlichkeit, Sauberkeit am Arbeitsplatz und ein kompromissloser Blick für das Detail. Wir verstehen unser Handwerk nicht nur als Dienstleistung, sondern als Beitrag zur Lebensqualität unserer Kunden.
+                    </p>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+                        Von der ersten Farbberatung bis zur finalen Abnahme begleiten wir Sie mit Fachwissen und Leidenschaft. Vertrauen ist die Basis unserer Arbeit – Qualität das Ergebnis.
+                    </p>
+<div class="pt-8">
+<a class="inline-flex items-center gap-4 group" href="#kontakt">
+<span class="font-label-sm uppercase tracking-[0.2em] text-tertiary">Mehr über uns erfahren</span>
+<span class="material-symbols-outlined text-tertiary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bewertungen Section -->
+<section class="py-[120px] bg-inverse-surface" id="bewertungen">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-20">
+<span class="font-label-sm uppercase text-tertiary tracking-[0.2em] mb-4 block">Referenzen</span>
+<h2 class="font-headline-lg text-headline-lg text-surface">Was unsere Kunden sagen</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Review 1 -->
+<div class="bg-surface p-10 relative group hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-6 block" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="font-body-md text-on-surface-variant italic mb-8">"Hervorragende Arbeit bei unserer Fassadensanierung. Die Baustelle wurde jeden Tag top-sauber verlassen."</p>
+<div>
+<p class="font-bold text-on-surface">Basti Fox</p>
+<p class="text-sm text-outline">Privatkunde</p>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface p-10 relative group hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-6 block" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="font-body-md text-on-surface-variant italic mb-8">"Endlich mal ein Maler, der wirklich mitdenkt. Die Farbberatung war Gold wert. Sehr zu empfehlen!"</p>
+<div>
+<p class="font-bold text-on-surface">Frank Bauernfeind</p>
+<p class="text-sm text-outline">Immobilienbesitzer</p>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="bg-surface p-10 relative group hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-6 block" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="font-body-md text-on-surface-variant italic mb-8">"Von der Anfrage bis zur Ausführung absolut professionell. Termine wurden exakt eingehalten."</p>
+<div>
+<p class="font-bold text-on-surface">B &amp; A Hagemann</p>
+<p class="text-sm text-outline">Hausverwaltung</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Referenzen Gallery -->
+<section class="py-[120px] bg-surface" id="referenzen">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">Ausgewählte Projekte</h2>
+<div class="w-20 h-1 bg-tertiary"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="relative overflow-hidden group aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A pristine white modern villa facade in Passau, showcasing professional painting and finishing. The architectural lines are sharp, with the rich white paint contrasting beautifully against the deep blue sky. The scene is shot in bright daylight, highlighting the smooth texture of the exterior coating. This represents high-end exterior residential renovation with meticulous attention to detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0segXz0HUtIglWaKb-nVtdO6dOFKo2V1aBYk6_6HkSn1lA1Yc62LYlNXOZxw18B9Ff1LfVvnE3X8L6GFxMk2fzwkGQuBVAz_0uWyflCBAqCQg37z32n5nCWEvwK4zf3nIIfb8LE0s477JjwYiQY3dpeh5xKs3m3X2ZFxz_OuhBRwu8JhHwvpdaYGW9qIfvDNeCFLMHex_CIIm7pA7yvtGoRUFX3ie584y3JOcr6pcuYrFIlbbGu85f8TrxRAVdGYsRVahIQ7hDbY"/>
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-surface p-8">
+<div class="text-center translate-y-4 group-hover:translate-y-0 transition-transform">
+<p class="font-label-sm uppercase tracking-widest mb-2">Fassade</p>
+<h4 class="font-headline-md">Neubau Passau</h4>
+</div>
+</div>
+</div>
+<div class="relative overflow-hidden group aspect-square lg:col-span-1">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A luxurious minimalist interior living room featuring expertly painted walls in a sophisticated soft-beige palette. The lighting is editorial and moody, casting subtle shadows that emphasize the perfect smoothness of the wall finish. The decor is high-end, featuring mid-century modern furniture and expansive windows, embodying the premium quality of interior architectural design and painting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt6ovgKq_e7Or22NNmy1PP1_gKNPQVb24L2YmLUGwsskUo3xhypEjsJdqAP7fvqbHsYhGqg-exdnfgYW6cw8jBcFOOwfB7_QTLwHTSqR3gJbCnOmB7dWznZ-bTIw5vfxOgm6khUoekbfUvTrU9rEB2bI-iFXJAnuifdPqNmWBahvcGpUmcyRvXNib5wqhPL3dIiJ_coTiuCVo02szeneihiFyjig0fix_R0iWEMYhnDLkr6qQI-gomCBwjHepO9LKVtiBZiAFPi0A"/>
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-surface p-8">
+<div class="text-center translate-y-4 group-hover:translate-y-0 transition-transform">
+<p class="font-label-sm uppercase tracking-widest mb-2">Innenraum</p>
+<h4 class="font-headline-md">Penthouse Loft</h4>
+</div>
+</div>
+</div>
+<div class="relative overflow-hidden group aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close-up of a perfectly restored historic wooden door in a heritage building, showing professional lacquer work and wood preservation. The finish is a deep, rich charcoal gray with a subtle satin sheen that reflects the soft morning light. The craftsmanship is evident in every corner and molding, emphasizing the high-end restoration services provided by a master painter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5KamobTrj1JwaFbFXtIlGUsqIsNwYWwzd71Du9qnnpVYiwxMmcrwg0wb4tXEKXQjpPbnR3FYBzPLNfjxGzs6rtZpSDAhd3qZDJt-DXhlny9JD5OS6ib3hpz2KsUyPC-E5hJVwPYf0AYZNGN-BSA23qZAzAiJL4sY4F3M8gesV3K6nl00Ou8-J4qD6_BeFAdzQOEHzKYr8nOd4w8QV86gBi_OVN29SNmTxLSRa06qucc46PJSPVHHuK2T0dvCYp9aG0AwQ3DEoiZc"/>
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-surface p-8">
+<div class="text-center translate-y-4 group-hover:translate-y-0 transition-transform">
+<p class="font-label-sm uppercase tracking-widest mb-2">Restaurierung</p>
+<h4 class="font-headline-md">Altstadt Passau</h4>
+</div>
+</div>
+</div>
+<div class="relative overflow-hidden group aspect-video md:col-span-2">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Wide shot of an expansive commercial gallery space with pristine white walls and professional flooring. The lighting is high-key and uniform, highlighting the sheer scale and flawless finish of the paintwork. The architectural space is clean, modern, and uncluttered, showcasing the capability of handling large-scale commercial painting projects with master-level precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8t4Zp7LG1STN4vopDQcxQDz9PRn474fn5pDwNgXNfzx1-071TfKWBchPDqeTr5c3iMs0tGuIkJhCmWg8TkshJuEsJUX0wj0dOQ3UDmIwPo50YIf4NqMaJI3a7qoDe-M7-Vg-7oTk1kB5D4RJK53tFLkjTnj9cVBud6wgP47ao8CsNpcUb8fMZgT-psfvBTLaT97m3uOiA_m8LCP1c1gXLiOx7dXDXUDZxnlXCv3GqHUNlTqPC6-1vYm6ADpcnCFk5Bni2DFj6V24"/>
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-surface p-8">
+<div class="text-center translate-y-4 group-hover:translate-y-0 transition-transform">
+<p class="font-label-sm uppercase tracking-widest mb-2">Gewerbe</p>
+<h4 class="font-headline-md">Bürokomplex Innstadt</h4>
+</div>
+</div>
+</div>
+<div class="relative overflow-hidden group aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Detailed shot of an exterior terrace with professional stone and sockel coating. The finish is a modern deep gray, providing a clean contrast to the surrounding greenery and warm wooden decking. The scene is captured during the golden hour, with soft warm light enhancing the textures of the high-performance weather-resistant coatings." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW7ry664mEjKy2IMrelJ6sSP5hEurQVTKPK6gC85QE_pLxnB-CQRGiAR9JZ0uSntp4j4ggwjWTGGUgvUb3AP4faVUf4zwrk2q79U65ZpqhkJNSRdakwqnTjtnBBuzvTMQVOUjehJ4_OKqk-1_iD29pyipv0s0q7UtrbW3FbynuYyt5jCPiNELiZ5yYo-vCfxoxAwL3SOQ3DQxGA4WqQbooYVmnmz4D63o9X6kmlQIJFP19Vytq7p2qV7oBQKtjKASMqgUM714bY4w"/>
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-surface p-8">
+<div class="text-center translate-y-4 group-hover:translate-y-0 transition-transform">
+<p class="font-label-sm uppercase tracking-widest mb-2">Außenanlage</p>
+<h4 class="font-headline-md">Terrasse Hacklberg</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Kontakt Section -->
+<section class="py-[120px] bg-surface-container" id="kontakt">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<!-- Info Column -->
+<div class="bg-inverse-surface text-surface p-12 lg:p-20 flex flex-col justify-between">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-8">Bereit für Ihr Projekt?</h2>
+<div class="space-y-6 mb-16">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary">location_on</span>
+<div>
+<p class="font-bold">Kopec GmbH</p>
+<p class="text-secondary-fixed">Innstraße 12, 94032 Passau</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary">mail</span>
+<p class="text-secondary-fixed">info@kopec-passau.de</p>
+</div>
+</div>
+</div>
+<div>
+<p class="font-label-sm uppercase tracking-widest mb-4 opacity-60">Direkter Kontakt</p>
+<a class="text-4xl md:text-5xl font-bold text-tertiary hover:opacity-80 transition-opacity" href="tel:08514905519">0851 4905519</a>
+</div>
+</div>
+<!-- Form Column -->
+<div class="bg-white p-12 lg:p-20 shadow-sm">
+<form class="space-y-8">
+<div class="space-y-2">
+<label class="font-label-sm uppercase text-on-surface-variant">Vollständiger Name</label>
+<input class="w-full border-0 border-b border-outline p-0 pb-2 focus:ring-0 focus:border-tertiary bg-transparent transition-colors" placeholder="Max Mustermann" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label-sm uppercase text-on-surface-variant">E-Mail Adresse</label>
+<input class="w-full border-0 border-b border-outline p-0 pb-2 focus:ring-0 focus:border-tertiary bg-transparent transition-colors" placeholder="email@beispiel.de" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm uppercase text-on-surface-variant">Telefonnummer</label>
+<input class="w-full border-0 border-b border-outline p-0 pb-2 focus:ring-0 focus:border-tertiary bg-transparent transition-colors" placeholder="+49 123 456789" type="tel"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm uppercase text-on-surface-variant">Ihr Anliegen</label>
+<textarea class="w-full border-0 border-b border-outline p-0 pb-2 focus:ring-0 focus:border-tertiary bg-transparent transition-colors" placeholder="Beschreiben Sie kurz Ihr Vorhaben..." rows="4"></textarea>
+</div>
+<button class="w-full bg-tertiary text-on-tertiary py-5 font-label-sm uppercase tracking-widest hover:opacity-90 transition-opacity" type="submit">
+                            Anfrage senden
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-inverse-surface text-secondary-fixed py-16 border-t border-white/10">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+<div>
+<h2 class="text-2xl font-bold text-surface mb-2">KOPEC</h2>
+<p class="font-body-md text-stone-500">Malermeister in Passau seit Jahren. Handwerkskunst mit Herz und Verstand.</p>
+</div>
+<div class="flex gap-8 justify-center">
+<a class="font-label-sm uppercase tracking-widest hover:text-tertiary transition-colors" href="#">Impressum</a>
+<a class="font-label-sm uppercase tracking-widest hover:text-tertiary transition-colors" href="#">Datenschutz</a>
+<a class="font-label-sm uppercase tracking-widest hover:text-tertiary transition-colors" href="#">AGB</a>
+</div>
+<div class="text-right">
+<p class="font-label-sm uppercase tracking-widest mb-1">Mo — Fr: 08:00 — 17:00</p>
+<p class="text-surface font-bold">0851 4905519</p>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-stone-500">
+<p>© 2024 Kopec GmbH. Alle Rechte vorbehalten.</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">handyman</span>
+<span>Traditioneller Innungsfachbetrieb</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
